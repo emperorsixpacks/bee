@@ -1,0 +1,257 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zxx" class="js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Softnio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="{% static 'logo2.png' %}">
+    <!-- Site Title  -->
+    <title>BeeUSDT| About Page</title>
+    <!-- Bundle and Base CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/vendor.bundle.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <!-- Extra CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
+</head>
+
+<body class="nk-body body-wider mode-onepage">
+    <div class="nk-wrap">
+        <header class="nk-header page-header is-transparent is-sticky is-shrink" id="header">
+            <!-- Header @s -->
+            <div class="header-main">
+                <div class="header-container container">
+                    <div class="header-wrap">
+                        <!-- Logo @s -->
+                        <div class="header-logo logo">
+                            <a href="{% url 'home' %}" class="logo-link">
+                                <img class="logo-dark" src="{% static 'logo2.png' %}" srcset="{% static 'logo2.png' %} 2x" alt="logo">
+                                <img class="logo-light" src="{% static 'logo2.png' %}" srcset="{% static 'logo2.png' %} 2x" alt="logo">
+                            </a>
+                        </div>
+                        <!-- Menu Toogle @s -->
+                        <div class="header-nav-toggle">
+                            <a href="#" class="navbar-toggle" data-menu-toggle="header-menu">
+                                <div class="toggle-line">
+                                    <span></span>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Menu @s -->
+                        <div class="header-navbar">
+                            <nav class="header-menu" id="header-menu">
+                                <ul class="menu-btns">
+                                    <li><a href="{% url 'login' %}" class="btn btn-md btn-auto btn-primary no-change"><span>Login</span></a></li>
+                                </ul>
+                            </nav>
+                        </div><!-- .header-navbar @e -->
+                    </div>
+                </div>
+            </div><!-- .header-main @e -->
+            <!-- Banner @s -->
+            <div class="header-banner bg-theme-alt">
+                <div class="nk-banner">
+                    <div class="banner banner-inner">
+                        <div class="banner-wrap ov-v">
+                            <div class="container">
+                                <div class="row align-items-center justify-content-center justify-content-lg-between">
+                                    <div class="col-lg-6 col-sm-10 col-mb-10 text-center text-lg-left">
+                                        <div class="banner-caption cpn tc-light mgt-m70">
+                                            <div class="cpn-head">
+                                                <h1 class="title">About BeeUSDT</h1>
+                                            </div>
+                                            <div class="cpn-text cpn-text-s3">
+                                                <p>It's not too late to start earning</p>
+                                            </div>
+                                        </div>
+                                    </div><!-- .col -->
+                                </div><!-- .row -->
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- .nk-banner -->
+                <div class="nk-ovm mask-d shape-x"></div>
+                <!-- Place Particle Js -->
+                <!-- <div id="particles-bg" class="particles-container particles-bg"></div> -->
+            </div>
+            <!-- .header-banner @e -->
+        </header>
+        <main class="nk-pages">
+            <section class="section pdt-0 over-up-s2">
+                <div class="container">
+                    <div class="nk-block">
+                        <div class="row justify-content-lg-between justify-content-center align-items-center gutter-vr-30px">
+                            <div class="col-lg-6 col-mb-10 order-lg-last">
+                                <div class="nk-block-img">
+                                    <img src="{% static 'logo2.png' %}" alt="img">
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="nk-block-text text-center text-lg-left">
+                                    <h2 class="title title-thin title-dark">BeeUSDT allows you<br class="d-lg-none d-xl-block">to earn USDT without a single task all you have to do is to invest and your money works for you....</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // -->
+            <section class="section bg-light section-about">
+                <div class="container">
+                    <!-- Block @s -->
+                    <div class="nk-block">
+                        <div class="row gutter-vr-30px align-items-center">
+                            <div class="col-lg-6">
+                                <div class="nk-block-text">
+                                    <h2 class="title title-dark title-thin">About Us</h2>
+                                    {{about}}
+                                    </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="nk-block-video">
+                                    <img src="images/video/a.png" alt="video">
+                                    <a href="https://www.youtube.com/watch?v=SSo_EIwHSd4" class="nk-block-video-play video-popup btn-play btn-play-light"><em class="fas fa-play"></em></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- .nk-block @e -->
+                    <div class="hr"></div>
+                    <!-- Block @s -->
+                    <div class="nk-block nk-block-about">
+                        <div class="row gutter-vr-30px align-items-center justify-content-between">
+                            <div class="col-md-4 col-lg-3">
+                                <div class="nk-block-text">
+                                    <h2 class="title title-lg title-dark title-thin">Why you<br>you can trust</h2>
+                                </div>
+                            </div>
+                            <div class="col-md-7 col-lg-8">
+                                <div class="nk-block-text">
+                                    {{trust}}
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- .nk-block @e -->
+                    <div class="hr"></div>
+                    <!-- Block @s -->
+                    <div class="nk-block nk-block-about">
+                        <div class="row gutter-vr-30px align-items-center justify-content-between">
+                            <div class="col-md-4 col-lg-3">
+                                <div class="nk-block-text">
+                                    <h2 class="title title-lg title-dark title-thin">Our Mission</h2>
+                                </div>
+                            </div>
+                            <div class="col-md-7 col-lg-8">
+                                <div class="nk-block-text">
+                                    {{mission}}
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- .nk-block @e -->
+                </div>
+            </section>
+            <!-- // -->
+            <section class="section ov-h">
+                <!-- Block @s -->
+                <div class="nk-block nk-block-features">
+                    <div class="container">
+                        <div class="row align-items-center gutter-vr-30px">
+                            <div class="col-lg-5">
+                                <div class="nk-block-text">
+                                    <h2 class="title title-thin title-dark">Meet Our Best <strong class="text-primary-alt">Features</strong></h2>
+                                    <p>We have many more feature that impress you. <br class="d-none d-lg-block">register now <a href="{% url 'register' %}" class="link link-primary link-thin link-underline"> to earn </a></p>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="row align-items-center">
+                                    <div class="col-sm-6">
+                                        <div class="feature card card-s2 ov-h">
+                                            <div class="feature-text">
+                                                <h5 class="title title-md">Referral earnings</h5>
+                                                <p>Earn from your referrals on their first deposit, earn form your first generation and from your second generation on their first deposit </p>
+                                            </div>
+                                            <div class="feature-icon feature-icon-bg">
+                                                <img src="{% static 'assets/images/icons/icon-o.png' %}" alt="feature">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="feature card card-s2 ov-h">
+                                            <div class="feature-text">
+                                                <h5 class="title title-md">Safe and secure</h5>
+                                                <p>Your information is in safe hands, we are built on a decentralized network</p>
+                                            </div>
+                                            <div class="feature-icon feature-icon-bg">
+                                                <img src="{% static 'assets/images/icons/icon-p.png' %}" alt="feature">
+                                            </div>
+                                        </div>
+                                        <div class="feature card card-s2 ov-h">
+                                            <div class="feature-text">
+                                                <h5 class="title title-md">Everyday earnings</h5>
+                                                <p>Get three percent of your total balance every day, let your money work for you</p>
+                                            </div>
+                                            <div class="feature-icon feature-icon-bg">
+                                                <img src="{% static 'assets/images/icons/icon-q.png' %}" alt="feature">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- .block @e -->
+            </section>
+            <!-- // -->
+        </main>
+        <!-- Footer -->
+        <footer class="nk-footer bg-theme-alt">
+            <section class="section section-m section-footer tc-light bg-transparent ov-h">
+                <div class="container">
+                    <!-- Block @s -->
+                    <div class="nk-block block-footer">
+                        <div class="row gutter-vr-30px">
+                            <div class="col-sm-4">
+                                <div class="wgs wgs-text mb-0">
+                                    <div class="wgs-body">
+                                        <a href="./" class="wgs-logo">
+                                            <img src="images/logo-full-white.png" srcset="{% static 'logo2.png' %} 2x" width="50px" alt="logo">
+                                        </a>
+                                        <ul class="wgs-list wgs-list-s2">
+                                            <li class="pdb-s">BeeUSDT</li>
+                                            <li class="pdb-s">2022</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-lg-2 col-sm-4">
+                                <div class="wgs wgs-menu mb-0">
+                                    <h6 class="wgs-title wgs-title-s3 t-cap">Company</h6>
+                                    <div class="wgs-body">
+                                        <ul class="wgs-links">
+                                            <li><a href="{% url 'aboutus' %}">About Us</a></li>
+                                            <li><a href="{% url 'aboutus' %}">Why Why BeeUSDT?</a></li>
+                                            <li><a href="{% url 'home' %}">Home</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .block @e -->
+                </div>
+            </section>
+            <div class="nk-ovm shape-x-3"></div>
+        </footer>
+    </div>
+    <!-- Preloader -->
+    <div class="preloader"><span class="spinner spinner-round"></span></div>
+    <!-- JavaScript -->
+    <script src="{% static 'assets/js/jquery.bundle.js' %}"></script>
+    <script src="{% static 'assets/js/scripts.js' %}"></script>
+    <script src="{% static 'assets/js/charts.js' %}"></script>
+    <script src="{% static 'assets/js/charts.js' %}"></script>
+</body>
+
+</html>

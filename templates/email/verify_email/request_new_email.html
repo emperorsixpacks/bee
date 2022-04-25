@@ -1,0 +1,43 @@
+{% extends "email_index.html" %}
+
+{%block content%}
+
+<div class="container" 
+    style="
+    height: auto;
+    margin-bottom: 0px; 
+    margin-top: 100px;
+    padding: 100px; 
+    border: 0px solid red;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    
+    ">
+    <div class="container mt-5">
+        {% if user.linkcount.sent_count == 0 %}
+        <h2 style="margin-bottom: 20px;">Send Verification email</h2>
+        {% else %}
+        <h2 style="margin-bottom: 20px;">Request New Email for Verification</h2>
+        {% endif %}
+        <hr>
+        <form method='POST' >
+            {% csrf_token %}
+    
+            <fieldset>
+                <input name="email" type="email"  value="{{user.email}}" readonly class="form-control input-rounded">
+            </fieldset>
+    
+            <div style="margin-top: 50px;">
+                {% if user.linkcount.sent_count == 0 %}
+                <button class="btn btn-outline-info" type="submit">Send Email</button>
+                {% else %}
+                <button class="btn btn-outline-info" type="submit">Request New Email</button>
+                {% endif %}
+
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

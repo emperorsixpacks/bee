@@ -1,0 +1,10 @@
+{% extends 'baseauthenticate.html' %}
+{% block content %}
+    <h4 class="text-center mb-4 text-white">Account Locked</h4>
+    <form action="{% url 'request-new-link-from-email' %}">
+        <div class="text-center">
+            <button type="button" class="btn bg-white text-primary btn-block" onclick="location.href='{% url 'request-new-link-from-email' %}'">Activate</button>
+        </div>
+    </form>
+
+{% endblock %}

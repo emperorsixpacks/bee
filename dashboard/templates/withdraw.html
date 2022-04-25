@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block title %} Withdrawal Page {% endblock %}
+
+{% block content %}
+<!--**********************************
+    Content body start
+***********************************-->
+<div class="container-fluid">
+    	<div class="form-head mb-4">
+					<h2 class="text-black font-w600 mb-0">My Withdrawals </h2>
+				</div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Withdraw History</h4>
+                        <div>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#exampleModalCenter">Withdraw</button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModalCenter">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Enter a valid amount ($)</h5>
+                                            <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="basic-form">
+                                                <form method="POST" action=".">
+                                                    {% csrf_token %}
+                                                    <div class="form-group">
+                                                        {{ form }}
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger light" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                         <div class="modal-body">
+                                                <p>{{text}}
+                                                </p>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="example3" class="display min-w850">
+                                <thead>
+                                    <tr>
+                                        <th>Wallet Address</th>
+                                        <th>Amount</th>
+                                        <th>Date</th>
+                                        <th>Time</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for i in table %}
+                                    <tr>
+                                        <td>{{i.wallet_address}}</td>
+                                        <td>${{i.amount}}</td>
+                                        <td>{{i.get_date}}</td>
+                                        <td>{{i.get_time}}</td>
+                                        <td>{{i.status}}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Wallet Address</th>
+                                        <th>Amount</th>
+                                        <th>Date</th>
+                                        <th>Time</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--**********************************
+    Content body end
+***********************************-->
+
+
+{% endblock %}

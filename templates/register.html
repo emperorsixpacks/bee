@@ -1,0 +1,69 @@
+{% extends 'baseauthenticate.html' %}
+
+{% block title %} Register Page {% endblock %}
+
+{% block content %}
+
+<h4 class="text-center mb-4 text-white">Register</h4>
+<div class="form-validation">
+    <form class="form-valide"  method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label class="col-lg-4 col-form-label" for="val-username">Username
+                <span class="text-danger">*</span>
+            </label>
+            <div class="col-xl-12">
+                <input type="text" class="form-control" id="val-username" name="val-username" placeholder="Enter a username..">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-4 col-form-label" for="val-email">Email <span
+                    class="text-danger">*</span>
+            </label>
+            <div class="col-xl-12">
+                <input type="email" class="form-control" id="val-email" name="val-email" placeholder="Your valid email..">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-4 col-form-label" >First name <span
+                    class="text-danger">*</span>
+            </label>
+            <div class="col-xl-12">
+                <input type="text" class="form-control" name="val-first-name" placeholder="Your first name" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-4 col-form-label">Last name <span
+                    class="text-danger">*</span>
+            </label>
+            <div class="col-xl-12">
+                <input type="text" class="form-control" name="val-last-name" placeholder="Your last name" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-4 col-form-label" for="val-password">Password
+                <span class="text-danger">*</span>
+            </label>
+            <div class="col-xl-12">
+                <input type="password" class="form-control" id="val-password" name="val-password" placeholder="Choose a safe one..">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-6 col-form-label" for="val-confirm-password">Confirm Password <span
+                    class="text-danger">*</span>
+            </label>
+            <div class="col-xl-12">
+                <input type="password" class="form-control" id="val-confirm-password" name="val-confirm-password" placeholder="..and confirm it!">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-lg-8 ml-auto">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </div>
+    </form>
+<div class="new-account mt-3">
+    <p class="text-white">Already have an account? <a class="text-white" href="{% url 'login' %}">Sign in</a></p>
+</div>
+
+{% endblock %}
