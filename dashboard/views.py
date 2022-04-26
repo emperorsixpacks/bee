@@ -8,10 +8,10 @@ from accounts.views import login_required_active
 from accounts.models import RefPayouts, UserProfile
 from home.models import Settings, WalletAddress
 
-settings = Settings.objects.get(id=1)
-charge = settings.charge_in_percentage
-deposit_text = settings.deposit_text
-withdraw_text = settings.withdrawal_text
+settings = 1#Settings.objects.get(id=1)
+charge =1 #settings.charge_in_percentage
+deposit_text =2 #settings.deposit_text
+withdraw_text =2 #settings.withdrawal_text
 address = WalletAddress.objects.all()
 
 
