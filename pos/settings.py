@@ -28,12 +28,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-xgk-c00-9^!#8+x*ew-7+^5qfxit(oj@wg#(2f2acd=bpa!sns'
-
-# SECURITY WARNING: don't run with debug turned on in production!
+SECRET_KEY = '@SECRET_KEY@'
 DEBUG = True
 
-ALLOWED_HOSTS = ['.beeusdtcrypto.com']
+# Find out what the IP addresses are at run time
+# This is necessary because otherwise Gunicorn will reject the connections
+def ip_addresses():
+    ip_list = []
+    for interface in netifaces.interfaces():
+        addrs = netifaces.ifaddresses(interface)
+        for x in (netifaces.AF_INET, netifaces.AF_INET6):
+            if x in addrs:
+                ip_list.append(addrs[x][0]['addr'])
+    return ip_list
+
+ALLOWED_HOSTS = ip_addresses()
 
 
 # Application definition
@@ -89,14 +98,15 @@ WSGI_APPLICATION = 'pos.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': env('NAME'),
-       'USER': env('USER'),
-       'PASSWORD': env('PASSWORD'),
-       'HOST': env('HOST'),
-       'PORT': env('PORT'),
-   }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'django',
+        'USER': 'django',
+        'PASSWORD': '@DBPASSWORD@',
+        'HOST': '@DBHOST@',
+        'PORT': '@DBPORT@',
+        'OPTIONS': {'sslmode': 'require'},
+    }
 }
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
