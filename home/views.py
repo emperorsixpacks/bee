@@ -18,7 +18,7 @@ def index(request):
 
 
 def about_us(request):
-    about = AboutUsPage.objects.get(id=1)
+    about = 3#AboutUsPage.objects.get(id=1)
     about_us_section = about.about_us_section
     trust = about.why_you_can_trust_us_section
     mission = about.our_mission_section
