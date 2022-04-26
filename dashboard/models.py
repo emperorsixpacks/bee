@@ -7,7 +7,7 @@ from accounts.models import User, UserProfile
 from accounts.models import RefPayouts
 from home.models import Settings
 
-settings = Settings.objects.get(id=1)
+#settings = Settings.objects.get(id=1)
 charge = settings.charge_in_percentage
 
 
@@ -48,7 +48,7 @@ class Deposits(models.Model):
             if user.referral:
                 referral_top_user = User.objects.get(username=user.referral)
                 referral_top_wallet = Wallet.objects.get(user=referral_top_user)
-                percent2 = referral_top_wallet.balance * settings.first_gen_percentage
+                percent2 = 2#referral_top_wallet.balance * settings.first_gen_percentage
                 referral_top_wallet.balance += percent2
                 referral_top_wallet.save()
                 RefPayouts.objects.create(user=referral_top_user, amount=self.amount, generation='First',
@@ -56,7 +56,7 @@ class Deposits(models.Model):
                 if referral_top_user.userprofile.referral:
                     referral_top_top_user = User.objects.get(username=referral_top_user.userprofile.referral)
                     referral_top_top_wallet = Wallet.objects.get(user=referral_top_top_user)
-                    percent = referral_top_top_wallet.balance * settings.second_gen_percentage
+                    percent =3# referral_top_top_wallet.balance * settings.second_gen_percentage
                     referral_top_top_wallet.balance += percent
                     referral_top_top_wallet.save()
                     RefPayouts.objects.create(user=referral_top_top_user, amount=self.amount, generation='Second',
