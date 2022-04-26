@@ -88,15 +88,11 @@ WSGI_APPLICATION = 'pos.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+#Please change this to postgres
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django',
-        'USER': 'django',
-        'PASSWORD': '@DBPASSWORD@',
-        'HOST': '@DBHOST@',
-        'PORT': '@DBPORT@',
-        'OPTIONS': {'sslmode': 'require'},
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db_pos.sqlite3',
     }
 }
 # Password validation
